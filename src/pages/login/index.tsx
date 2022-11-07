@@ -2,9 +2,13 @@ import React, { useRef, useState } from "react";
 import LoginForm from "./form";
 import { LoginContainer } from "./style";
 
-interface Props {}
+interface Props {
+  setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-const Login: React.FC<Props> = () => {
+const Login: React.FC<Props> = (props) => {
+  const { setIsLoggedIn } = props;
+
   const [formIsVisible, setFormIsVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,7 +35,9 @@ const Login: React.FC<Props> = () => {
         password={password}
         setPassword={setPassword}
         visible={formIsVisible}
-        onSubmit={() => {}}
+        onSubmit={() => {
+          setIsLoggedIn(true);
+        }}
       />
     </LoginContainer>
   );

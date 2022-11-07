@@ -17,7 +17,7 @@ After cloning the repo, download any necessary packages:
 npm i
 ```
 
-Create a `.env` file with the necessary variables:
+Create a `.env.local` file with the necessary variables:
 
 - `API_URL`: GraphQL API URL.
 

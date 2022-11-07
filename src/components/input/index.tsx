@@ -30,8 +30,10 @@ export const TextInput: React.FC<TextInputProps> = (props) => {
         onChange={(e) => {
           setText(e.target.value);
         }}
-        onSubmit={() => {
-          onSubmit && onSubmit();
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            onSubmit && onSubmit();
+          }
         }}
       ></input>
     </TextInputContainer>
