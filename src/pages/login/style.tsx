@@ -11,15 +11,22 @@ export const LoginContainer = styled.div`
 
   .title {
     color: ${({ theme }) => theme.colors.ImperialRed};
-    font-size: 12em;
+    font-size: 13em;
     cursor: pointer;
     margin-bottom: 50px;
+    transition: font-size 2000ms 0ms;
+  }
+
+  .title.smaller {
+    cursor: default;
+    font-size: 11em;
   }
 `;
 
 export const FormContainer = styled.div<LoginFormProps>`
-  height: ${({ visible }) => (visible ? "auto" : "0")};
+  height: ${({ visible }) => (visible ? "250px" : "0")};
   overflow: hidden;
   opacity: ${({ visible }) => (visible ? "1" : "0")};
-  transition: height 0ms 3000ms, opacity 1000ms 0ms;
+  transition: height 2000ms 0ms, opacity 2000ms 0ms;
+
 `;

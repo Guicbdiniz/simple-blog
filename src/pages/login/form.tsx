@@ -25,6 +25,7 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
         type="email"
         shouldFocus={visible}
         onSubmit={onSubmit}
+        placeholder={"example@example.com"}
       />
       <TextInput
         setText={(text) => {
@@ -33,6 +34,7 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
         text={password}
         type="password"
         onSubmit={onSubmit}
+        placeholder={"*******"}
       />
       <Button
         text="Login"

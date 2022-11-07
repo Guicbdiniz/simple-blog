@@ -7,11 +7,12 @@ interface TextInputProps {
   type?: React.HTMLInputTypeAttribute;
   shouldFocus?: boolean;
   onSubmit?: () => void;
+  placeholder?: string;
 }
 
 export const TextInput: React.FC<TextInputProps> = (props) => {
   const ref = useRef<HTMLInputElement>(null);
-  const { setText, text, type, shouldFocus, onSubmit } = props;
+  const { setText, text, type, shouldFocus, onSubmit, placeholder } = props;
 
   useEffect(() => {
     if (shouldFocus) {
@@ -23,6 +24,7 @@ export const TextInput: React.FC<TextInputProps> = (props) => {
     <TextInputContainer>
       <input
         ref={ref}
+        placeholder={placeholder}
         type={type || "text"}
         value={text}
         onChange={(e) => {

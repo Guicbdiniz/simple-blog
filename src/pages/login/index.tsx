@@ -8,14 +8,18 @@ const Login: React.FC<Props> = () => {
   const [formIsVisible, setFormIsVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [titleClasses, setTitleClasses] = useState<"title" | "title smaller">(
+    "title"
+  );
 
   return (
     <LoginContainer>
       <h1
-        className="title"
+        className={titleClasses}
         onClick={() => {
           if (!formIsVisible) {
             setFormIsVisible(true);
+            setTitleClasses("title smaller");
           }
         }}
       >
