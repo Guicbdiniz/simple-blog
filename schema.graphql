@@ -1,0 +1,63 @@
+"""Exposes a URL that specifies the behavior of this scalar."""
+directive @specifiedBy(
+  """The URL that specifies the behavior of this scalar."""
+  url: String!
+) on SCALAR
+
+type Author {
+  id: ID!
+  name: String!
+  posts: [Post!]!
+}
+
+"""
+A date string, such as 2007-12-03, compliant with the `full-date` format
+outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for
+representation of dates and times using the Gregorian calendar.
+"""
+scalar Date
+
+type Mutation {
+  createAuthor(
+    """Authors name"""
+    name: String!
+  ): Author!
+  createPost(authorId: Int!, body: String!, title: String!): Post!
+  deleteAuthor(
+    """Author Id"""
+    id: Int!
+  ): Author!
+  deletePost(
+    """Post ID"""
+    id: Int!
+  ): Post!
+  updateAuthor(
+    """Author Id"""
+    id: Int!
+
+    """Authors name"""
+    name: String
+  ): Author!
+  updatePost(authorId: Int, body: String, id: Int!, title: String): Post!
+}
+
+type Post {
+  body: String!
+  createdAt: Date!
+  id: ID!
+  title: String!
+}
+
+type Query {
+  author(
+    """Id arg"""
+    id: Int!
+  ): Author
+  authors: [Author!]!
+  post(
+    """Id arg"""
+    id: Int!
+  ): Post
+  posts: [Post!]!
+}
+
