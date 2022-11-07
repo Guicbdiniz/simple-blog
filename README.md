@@ -7,6 +7,7 @@ Simple blog created with React + Relay.
 - Developed using [Typescript](https://www.typescriptlang.org/) as main language.
 - Tested using [Jest](https://jestjs.io/pt-BR/) and [ts-jest](https://www.npmjs.com/package/ts-jest).
 - UI built using the frameworks [React](https://reactjs.org/) and [Relay](https://relay.dev/).
+- UI styles built using [styled-components](https://styled-components.com/).
 
 # Usage
 
